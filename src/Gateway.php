@@ -6,7 +6,7 @@ use Omnipay\Common\AbstractGateway;
 
 /**
  * Posnet Gateway
- * 
+ *
  * (c) Yasin Kuyu
  * 2015, insya.com
  * http://www.github.com/yasinkuyu/omnipay-posnet
@@ -89,11 +89,11 @@ class Gateway extends AbstractGateway {
     }
 
     public function getTransId() {
-        return $this->getParameter('transId');
+        return $this->getParameter('transactionReference');
     }
 
     public function setTransId($value) {
-        return $this->setParameter('transId', $value);
+        return $this->setParameter('transactionReference', $value);
     }
 
     public function getExtraPoint() {

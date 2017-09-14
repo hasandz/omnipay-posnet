@@ -106,7 +106,7 @@ class Response extends AbstractResponse implements RedirectResponseInterface {
     public function getRedirectUrl() {
         if ($this->isRedirect()) {
             $data = array(
-                'TransId' => $this->data["hostlogkey"]
+                'transactionReference' => $this->data["hostlogkey"]
             );
             return $this->getRequest()->getEndpoint() . '/test/index?' . http_build_query($data);
         }
