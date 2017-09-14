@@ -7,20 +7,20 @@ use Omnipay\Common\Message\AbstractRequest;
 
 /**
  * Posnet Purchase Request
- * 
+ *
  * (c) Yasin Kuyu
  * 2015, insya.com
  * http://www.github.com/yasinkuyu/omnipay-posnet
  */
 class PurchaseRequest extends AbstractRequest {
-    
+
     protected $endpoint = '';
     protected $endpoints = array(
         'test'       => 'http://setmpos.ykb.com/PosnetWebService/XML',
         'purchase'   => 'https://www.posnet.ykb.com/PosnetWebService/XML',
         '3d'         => 'https://www.posnet.ykb.com/3DSWebService/YKBPaymentService'
     );
- 
+
     protected $currencies = [
         'TRY' => 'YT',
         'USD' => 'US',
@@ -36,15 +36,15 @@ class PurchaseRequest extends AbstractRequest {
         $data['orderID'] = $this->getOrderId();
         $data['currencyCode'] = $this->currencies[$currency];
         $data['installment'] = $this->getInstallment();
-        
+
         $data['extraPoint'] = $this->getExtraPoint();
         $data['multiplePoint'] = $this->getMultiplePoint();
-        
+
         $data['amount'] = $this->getAmountInteger();
         $data['ccno'] = $this->getCard()->getNumber();
-        $data['expDate'] = $this->getCard()->getExpiryDate('my');
+        $data['expDate'] = $this->getCard()->getExpiryDate('ym');
         $data["cvc"] = $this->getCard()->getCvv();
- 
+
         return $data;
     }
 
@@ -56,14 +56,14 @@ class PurchaseRequest extends AbstractRequest {
         $root->appendChild($document->createElement('mid', $this->getMerchantId()));
         $root->appendChild($document->createElement('tid', $this->getTerminalId()));
 
-        // Each array element 
+        // Each array element
         $ossRequest = $document->createElement($this->getType());
         foreach ($data as $id => $value) {
             $ossRequest->appendChild($document->createElement($id, $value));
         }
 
         $root->appendChild($ossRequest);
-        
+
         $document->appendChild($root);
 
         // Post to Posnet
@@ -81,16 +81,16 @@ class PurchaseRequest extends AbstractRequest {
                 'CURLOPT_POST' => 1
             )
         ));
-       
+
         $xml = "xmldata=".$document->saveXML();
-        
+
         $this->endpoint = $this->getTestMode() ? $this->endpoints['test'] : $this->endpoints['purchase'];
-        
+
         $httpResponse = $this->httpClient->post($this->endpoint, $headers, $xml)->send();
 
         return $this->response = new Response($this, $httpResponse->getBody());
     }
-    
+
     public function getMerchantId() {
         return $this->getParameter('merchantId');
     }
