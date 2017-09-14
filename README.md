@@ -18,7 +18,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "hasandz/omnipay-posnet": "~2.0"
+        "hasandz/omnipay-posnet": "dev-master"
     }
 }
 ```

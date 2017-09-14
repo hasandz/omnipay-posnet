@@ -16,14 +16,6 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Yasin Kuyu",
-            "email": "yasinkuyu@gmail.com"
-        },
-        {
-            "name": "Hasan Degismez",
-            "email": "hasandz@.com"
-        },
-        {
             "name": "Omnipay Contributors",
             "homepage": "https://github.com/hasandz/omnipay-posnet/contributors"
         }
