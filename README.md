@@ -2,11 +2,6 @@
 
 **Posnet (Yapı Kredi, Vakıfbank, Anadolubank sanal pos) gateway for Omnipay payment processing library**
 
-[![Latest Stable Version](https://poser.pugx.org/yasinkuyu/omnipay-posnet/v/stable)](https://packagist.org/packages/yasinkuyu/omnipay-posnet) 
-[![Total Downloads](https://poser.pugx.org/yasinkuyu/omnipay-posnet/downloads)](https://packagist.org/packages/yasinkuyu/omnipay-posnet) 
-[![Latest Unstable Version](https://poser.pugx.org/yasinkuyu/omnipay-posnet/v/unstable)](https://packagist.org/packages/yasinkuyu/omnipay-posnet) 
-[![License](https://poser.pugx.org/yasinkuyu/omnipay-posnet/license)](https://packagist.org/packages/yasinkuyu/omnipay-posnet)
-
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+. This package implements Posnet (Turkish Payment Gateways) support for Omnipay.
 
@@ -23,7 +18,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "yasinkuyu/omnipay-posnet": "~2.0"
+        "hasandz/omnipay-posnet": "~2.0"
     }
 }
 ```
@@ -143,27 +138,6 @@ PHPUnit is a programmer-oriented testing framework for PHP. It is an instance of
 
         }
 
-
-## NestPay (EST)
-(İş Bankası, Akbank, Finansbank, Denizbank, Kuveytturk, Halkbank, Anadolubank, ING Bank, Citibank, Cardplus) gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-nestpay
-
-## Iyzico
-Iyzico gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-iyzico
-
-## GVP (Granti Sanal Pos)
-Gvp (Garanti, Denizbank, TEB, ING, Şekerbank, TFKB) gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-gvp
-
-## BKM Express
-BKM Express gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-bkm
-
-## Paratika
-Paratika (Asseco) (Akbank, TEB, Halkbank, Finansbank, İş Bankası, Şekerbank, Vakıfbank ) gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-paratika
-
 ## Support
 
 If you are having general issues with Omnipay, we suggest posting on
@@ -173,5 +147,5 @@ If you are having general issues with Omnipay, we suggest posting on
 If you want to keep up to date with release anouncements, discuss ideas for the project, or ask more detailed questions, there is also a [mailing list](https://groups.google.com/forum/#!forum/omnipay) which
 you can subscribe to.
 
-If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/yasinkuyu/omnipay-posnet/issues),
+If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/hasandz/omnipay-posnet/issues),
 or better yet, fork the library and submit a pull request.
