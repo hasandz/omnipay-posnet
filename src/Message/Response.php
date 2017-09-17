@@ -28,7 +28,7 @@ class Response extends AbstractResponse implements RedirectResponseInterface {
         try {
             $this->data = (array) simplexml_load_string($data);
         } catch (\Exception $ex) {
-            throw new InvalidResponseException();
+            throw new InvalidResponseException( (string) $data);
         }
     }
 
@@ -106,7 +106,7 @@ class Response extends AbstractResponse implements RedirectResponseInterface {
     public function getRedirectUrl() {
         if ($this->isRedirect()) {
             $data = array(
-                'transactionReference' => $this->data["hostlogkey"]
+                'TransId' => $this->data["hostlogkey"]
             );
             return $this->getRequest()->getEndpoint() . '/test/index?' . http_build_query($data);
         }
