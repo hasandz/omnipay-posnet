@@ -123,12 +123,12 @@ class PurchaseRequest extends AbstractRequest {
         return $this->setParameter('type', $value);
     }
 
-    public function getTransId() {
-        return $this->getParameter('transId');
+    public function getTransactionReference() {
+        return $this->getParameter('transactionReference');
     }
 
-    public function setTransId($value) {
-        return $this->setParameter('transId', $value);
+    public function setTransactionReference($value) {
+        return $this->setParameter('transactionReference', $value);
     }
 
     public function getOrderId() {
